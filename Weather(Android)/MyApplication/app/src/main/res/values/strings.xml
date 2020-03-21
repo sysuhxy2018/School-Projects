@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="unknown">Null</string>
+    <string name="humidity">Humidity</string>
+    <string name="windSpeed">Wind Speed</string>
+    <string name="visibility">Visibility</string>
+    <string name="pressure">Pressure</string>
+    <string name="unknownDate">01/01/1970</string>
+    <string name="resultReminder">Search Result</string>
+    <string name="loading">Fetching Weather</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="tab_text_1">TODAY</string>
+    <string name="tab_text_2">WEEKLY</string>
+    <string name="tab_text_3">PHOTOS</string>
+    <string name="rainfall">Precipitation</string>
+    <string name="temp">Temperature</string>
+    <string name="cloud">Cloud Cover</string>
+    <string name="ozone">Ozone</string>
+    <string name="error">Invalid Address</string>
+</resources>

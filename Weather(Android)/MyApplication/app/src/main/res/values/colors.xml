@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pureBlack">#000000</color>
+    <color name="pureWhite">#ffffff</color>
+    <color name="cardBackground">#1e1e1e</color>
+    <color name="iconSunny">#faab1a</color>
+    <color name="iconProperty">#bb86fc</color>
+    <color name="divider">#3a3b47</color>
+    <color name="fade">#a7a7a7</color>
+</resources>

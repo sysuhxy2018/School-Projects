@@ -1,0 +1,49 @@
+.icon img{
+    /* max-width: 80px; */
+    width: 10vmin;
+}
+
+.degree {
+    width: 1vmin;
+    vertical-align: top;
+}
+
+.container {
+    background-color: #9ad1f1;
+}
+
+.quit {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.header, h4, p {
+    margin: 0;
+}
+
+.container .title {
+    background-color: #6592ad;
+}
+
+i {
+    /* To avoid button background in chrome*/
+    -webkit-appearance: none;
+    display: block;
+}
+
+h2 {
+    font-size: 4vmin;
+}
+
+h3 {
+    font-size: 3vmin;
+}
+
+h4, i {
+    font-size: 2.5vmin;
+}
+
+p {
+    font-size: 2vmin;
+    /* white-space: nowrap; */
+}

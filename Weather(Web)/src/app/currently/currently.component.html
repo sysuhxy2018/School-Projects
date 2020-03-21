@@ -1,0 +1,76 @@
+<div class="container mt-5 mb-5">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item">
+  <a class="nav-link active" id="current-tab" data-toggle="tab" routerLink ="/currently"  role="tab" aria-controls="current" aria-selected="true">Current</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" id="hour-tab" data-toggle="tab" routerLink ="/hourly" role="tab" aria-controls="hour" aria-selected="false">Hourly</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" id="week-tab" data-toggle="tab" routerLink ="/weekly" role="tab" aria-controls="week" aria-selected="false">Weekly</a>
+</li>
+<li class="nav-item" style="flex: auto;"></li>
+<li class="nav-item">
+    <a class = "mark justify-content-right" role="tab">
+        <button class="mr-1"><img src = '../../assets/Twitter_Logo_Blue.png' class='twitter' (click)="newTweet()"></button>
+        <button class="ml-1"><i class="material-icons star" (click) = "addToFavour()">{{star}}</i></button>
+    </a>
+</li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="current" role="tabpanel" aria-labelledby="current-tab">
+<div class="card mt-5">
+    <div class="card-body">
+        <div class = 'row'>
+            <div class="col">
+                <h2 class = "mt-3">{{data['data']['city']}}</h2>
+                <h2 class = "mt-3">{{data['data']['timezone']}}</h2>
+                <h1 class = "mt-5">{{data['data']['temperature']}}<img src = "https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png" class="icon-degree">F</h1>
+                <h3 class = "mt-5">{{data['data']['summary']}}</h3>
+            </div>
+            <div class = "col text-center nav flex-column justify-content-center">
+                <img [src]="sealLink" class="img-fluid seal m-auto" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <!-- Should use table-boderless instead of setting css -->
+            <table class="table table-borderless mt-3 mb-3">
+                <tr class="row">
+                    <td class="col" [hidden] = "data['data']['humidity'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="Humidity" matTooltipPosition="above">
+                        <p>{{data['data']['humidity']}}</p>
+                    </td>
+                    <td class="col" [hidden] = "data['data']['pressure'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="Pressure" matTooltipPosition="above">
+                        <p>{{data['data']['pressure']}}</p>
+                    </td>
+                    <td class="col" [hidden] = "data['data']['windSpeed'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="Wind Speed" matTooltipPosition="above">
+                        <p>{{data['data']['windSpeed']}}</p>
+                    </td>
+                    <td class="col" [hidden] = "data['data']['visibility'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="Visibility" matTooltipPosition="above">
+                        <p>{{data['data']['visibility']}}</p>
+                    </td>
+                    <td class="col" [hidden] = "data['data']['cloudCover'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="CloudCover" matTooltipPosition="above">
+                        <p>{{data['data']['cloudCover']}}</p>
+                    </td>
+                    <td class="col" [hidden] = "data['data']['ozone'] == '0'">
+                        <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png" 
+                        class="img-fluid" alt="Responsive image" matTooltip="Ozone" matTooltipPosition="above">
+                        <p>{{data['data']['ozone']}}</p>   
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

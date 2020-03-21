@@ -1,0 +1,49 @@
+.form-container {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #808080;
+    background-color: #6592ad;
+}
+
+form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.label {
+    white-space: nowrap;
+}
+
+label, h1 {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+span {
+    color: #f81614;
+}
+
+.error {
+    color: #f81614;
+}
+
+.search, .clear, .results, .favorites {
+    background-color: white;
+    color: #808080;
+    border: 1px solid black;
+}
+
+.active {
+    background-color: #6592ad !important;
+}
+
+i {
+    vertical-align: bottom;
+}
+
+

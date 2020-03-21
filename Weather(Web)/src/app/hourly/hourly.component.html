@@ -1,0 +1,49 @@
+<div class="container mt-5 mb-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="current-tab" data-toggle="tab" routerLink ="/currently"  role="tab" aria-controls="current" aria-selected="true">Current</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" id="hour-tab" data-toggle="tab" routerLink ="/hourly" role="tab" aria-controls="hour" aria-selected="false">Hourly</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="week-tab" data-toggle="tab" routerLink ="/weekly" role="tab" aria-controls="week" aria-selected="false">Weekly</a>
+    </li>
+    <li class="nav-item" style="flex: auto;"></li>
+    <li class="nav-item">
+        <a class = "mark justify-content-right" role="tab">
+            <button class="mr-1"><img src = '../../assets/Twitter_Logo_Blue.png' class='twitter' (click)="newTweet()"></button>
+            <button class="ml-1"><i class="material-icons star" (click) = "addToFavour()">{{star}}</i></button>
+        </a>
+    </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="hour" role="tabpanel" aria-labelledby="hour-tab">
+      <div>
+        <div class = "row dataChoice">
+          <div class = "col-md-3">
+              <select class="custom-select" id="hourData" name = "hourData" [(ngModel)] = "dataOptions.name" required
+              (change) = "dataChange()">
+                  <option value = "temperature" selected>Temperature</option>
+                  <option value = "pressure">Pressure</option>
+                  <option value = "humidity">Humidity</option>
+                  <option value = "ozone">Ozone</option>
+                  <option value = "visibility">Visibility</option>
+                  <option value = "windSpeed">Wind Speed</option>
+                </select>
+          </div>
+        </div>
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="barChartColor">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>

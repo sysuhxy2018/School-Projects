@@ -1,0 +1,91 @@
+.card {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #9ad1f1;
+}
+
+.card .row:first-child>p{
+    text-align: left;
+}
+
+img.icon-degree {
+    width: 1vmin;
+    vertical-align: top;
+}
+
+#myTab a {
+    font-size: 2vmin;
+}
+
+.mark {
+    background-color: white;
+}
+
+.mark button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    vertical-align: bottom;
+}
+
+.twitter {
+    width: 100%;
+}
+
+.star {
+    width: 100%;
+    color: #ffd531;
+}
+
+/* Adaptive font size */
+
+h2 {
+    font-size: 4vmin;
+}
+
+h2+h2 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 5vmin;
+}
+
+h3 {
+    font-size: 3vmin;
+}
+
+p {
+    font-size: 2vmin;
+}
+
+table {
+    width: 100%;
+}
+
+table tr {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+
+table td {
+    text-align: center;
+    padding: 1vw;
+}
+
+table img{
+    max-width: 30px;
+    width: 3vw;
+}
+
+table p {
+    width: 100%;
+    text-align: center;
+}
+
+.seal {
+    width: 20vmin;
+}

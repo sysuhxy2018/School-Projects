@@ -1,0 +1,75 @@
+<div class = "container">
+  <div class="form-container mt-5 justify-content-center">
+    <h1 class="mt-5 mb-5">Weather Search</h1>
+    <form  (ngSubmit)="onSubmit()" #searchForm="ngForm">
+        <div class="form-group row">
+          <div class="col-md-2 text-left">
+              <label for="street" class="label">Street <span>*</span></label>
+          </div>
+          <div class="col-md-8">
+              <input type="text" class="form-control" id="street" name = "street" 
+              [(ngModel)] = "location.street" placeholder = "Enter Street Name" required
+              [disabled] = "disableAll" #streetField="ngModel">
+              <div [hidden]="disableAll || streetField.valid || streetField.untouched" class = "error">
+                Please enter a street.
+              </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-2 text-left">
+              <label for="city" class="label">City <span>*</span></label>
+          </div>
+          <div class="col-md-8">
+              <input type="text" class="form-control" id="city" name = "city" placeholder="Enter City Name" aria-label="Number" 
+              matInput [matAutocomplete]="auto" (input)="updateOptions()" required autocomplete="off"
+              [(ngModel)] = "isChecked ? '' : location.city" [disabled] = "disableAll" #cityField="ngModel">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of autoOptions" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+              <div [hidden]="disableAll || cityField.valid || cityField.untouched" class = "error">
+                Please enter a city.
+             </div>
+          </div>
+          <div class="col-md-2"></div>  
+        </div>
+        <div class="form-group row">
+          <div class="col-md-2 text-left">
+            <label for="state" class="label">State <span>*</span></label>
+          </div>
+          <div class="col-md-8">
+            <select class="custom-select form-control" id="state" name = "state" 
+            [(ngModel)] = "isChecked ? 'Select State' : location.state" required [disabled] = "disableAll">
+              <option *ngFor="let item of stateList.States" [value]="item.Abbreviation" >{{item.State}}</option>
+            </select>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="form-group form-check">
+            <input  class="form-check-input" type = "checkbox" id="current"
+            name="current" [(ngModel)] = "isChecked" (change) = "resetInputs(searchForm)">
+            <label class="form-check-label" for = "current">Current location</label>
+        </div>
+        <div class = "form-group mb-5">
+          <button type="submit" class="btn btn-primary search mr-1" [disabled] = "!isChecked && (location.state == 'Select State' || !searchForm.form.valid)"><i class="material-icons">search</i>Search</button>
+          <button type="button" class="btn btn-primary clear ml-1" (click) = "clearAll(searchForm);"><i class="material-icons">clear_all</i>Clear</button>
+        </div>
+    </form>
+</div>
+<ul class="nav nav-pills mb-4 mt-4 justify-content-center " id="pills-tab" role="tablist">
+  <li class="nav-item ">
+    <a class="nav-link results active mr-2" id="pills-results-tab" data-toggle="pill" 
+    role="tab" aria-controls="pills-results" aria-selected="true" href = "javascript:void;" (click)="redirect(addr)" style="cursor: pointer;">Results</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link favorites ml-2" id="pills-favorites-tab" data-toggle="pill"  
+    role="tab" aria-controls="pills-favorites" aria-selected="false" routerLink = "/favour">Favorites</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-results" role="tabpanel" aria-labelledby="pills-results-tab"></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+</div>
+</div>

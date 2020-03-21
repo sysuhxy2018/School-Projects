@@ -1,0 +1,36 @@
+<div class = "container">
+  <div class = "row title">
+      <table class="table table-borderless header">
+        <tbody>
+          <tr>
+            <td><h4>{{data.date}}</h4></td>
+            <td class="text-right">
+              <i mat-dialog-close class="material-icons quit">close</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class = "pl-3 pr-3 pt-2 pb-2">
+      <div class = "row">
+          <div class = "col">
+              <h3 class = "mb-3">{{data.city}}</h3>
+              <h2 class = "mb-3">{{data.temperature}}<img class = 'degree' src = "https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png">F</h2>
+              <p>{{data.summary}}</p>
+          </div>
+          <div class = "col icon">
+            <img class="img-fluid" alt="Responsive image" [src]="data.icon">
+          </div>
+        </div>
+        <hr>
+        <div class = "row justify-content-end">
+            <div class = "col-md-7 text-left">
+                <p>Precipitation : {{data.precipitation}}</p>
+                <p>Chance of Rain : {{data.chance}} %</p>
+                <p>Wind Speed : {{data.windSpeed}} mph</p>
+                <p>Humidity : {{data.humidity}} %</p>
+                <p>Visibility : {{data.visibility}} miles</p>
+            </div>
+        </div>
+  </div>
+</div>

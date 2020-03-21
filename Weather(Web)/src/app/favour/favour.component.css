@@ -1,0 +1,51 @@
+table tr{
+    width: 100%;
+    margin: 0 auto;
+}
+
+thead>tr {
+    background-color: #6592ad;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: #9ad1f1;
+}
+
+tbody>tr:nth-child(even){
+    background-color: #6592ad;
+}
+
+td,th {
+    text-align: center;
+    font-size: 2vmin;
+}
+
+a {
+    color: #2700ff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.trash {
+    color: #daa521;
+}
+
+.trashButton {
+    background-color: white;
+    border: white;
+}
+
+.seal{
+    width: 10vmin;
+}
+
+button {
+    padding: 0.5vmin;
+}
+
+i {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,25 @@
+<div class = "container mt-5">
+    <table class="table" [hidden] = "isZeroRecord">
+        <thead>
+          <tr class="row">
+            <th class ="col">#</th>
+            <th class="col">Image</th>
+            <th class="col">City</th>
+            <th class="col">State</th>
+            <th class="col">Favorites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class ="row" *ngFor="let item of data">
+            <td class="col">{{item.num}}</td>
+            <td class="col"><img [src]="item.info.src" class="img-fluid seal" alt=""></td>
+            <td class="col"><a href="javascript:;" (click)="renewAllData(item.info.city)" [matTooltip]="item.info.city" matTooltipPosition="below">{{item.info.city}}</a></td>
+            <td class="col">{{item.info.state}}</td>
+            <td class="col"><button class="btn btn-primary trashButton" (click)="deleteFavour(item.info.city)"><i class="material-icons trash">delete</i></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="alert alert-warning" role="alert" [hidden] = "!isZeroRecord">
+          No Records.
+      </div>
+</div>

@@ -1,0 +1,27 @@
+#myTab a {
+    font-size: 2vmin;
+}
+
+.mark {
+    background-color: white;
+}
+
+.mark button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    vertical-align: bottom;
+}
+
+.twitter {
+    width: 100%;
+}
+
+.star {
+    width: 100%;
+    color: #ffd531;
+}
+
+
